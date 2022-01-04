@@ -70,7 +70,7 @@ const SoonText = styled.div`
 function NewsletterSubscription({ item }) {
   const { t } = useTranslation('common');
 
-  const url = `https://questspace.us20.list-manage.com/subscribe?u=${process.env.NEXT_PUBLIC_MAILCHIMP_U}&id=${process.env.NEXT_PUBLIC_MAILCHIMP_ID}`;
+  const url = `https://questspace.us19.list-manage.com/subscribe/post?u=${process.env.NEXT_PUBLIC_MAILCHIMP_U}&id=${process.env.NEXT_PUBLIC_MAILCHIMP_ID}`;
   console.log(process.env.NEXT_PUBLIC_MAILCHIMP_U)
   return (
     <Wrapper>
