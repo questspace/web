@@ -70,15 +70,15 @@ const SoonText = styled.div`
 function NewsletterSubscription({ item }) {
   const { t } = useTranslation('common');
 
-  const url = `https://questspace.us19.list-manage.com/subscribe/post?u=${process.env.NEXT_PUBLIC_MAILCHIMP_U}&id=${process.env.NEXT_PUBLIC_MAILCHIMP_ID}`;
-  console.log(process.env.NEXT_PUBLIC_MAILCHIMP_U)
+  const postUrl = `https://questspace.us20.list-manage.com/subscribe/post?u=${process.env.NEXT_PUBLIC_MAILCHIMP_U}&id=${process.env.NEXT_PUBLIC_MAILCHIMP_ID}`;
+
   return (
     <Wrapper>
       <div className="header">{t('subscription_soon')}</div>
       <div className="content-wrapper newsletter">
         <div className="text"><SoonText>{t('newsletter_join')}</SoonText></div>
         <MailchimpSubscribe
-          url={url}
+          url={postUrl}
           render={({ subscribe, status, message }) => (
             <CustomForm
                 status={status}

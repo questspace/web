@@ -6,7 +6,6 @@ import { rem } from 'polished';
 import SocialItem from './SocialItem';
 import useWindowSize from '../utils/windowSize';
 import useTranslation from 'next-translate/useTranslation';
-import LinkButton from './LinkButton';
 
 const Footer = ({ socials }) => {
   const { t } = useTranslation('common');
@@ -30,12 +29,6 @@ const Footer = ({ socials }) => {
                 src="/static/images/logo.png"
                 alt="questSpace"
               />
-            </div>
-
-            <div className="button-wrapper">
-              <LinkButton to={'/'} type="gradient">
-                {t('get started')}
-              </LinkButton>
             </div>
           </div>
 
@@ -151,22 +144,22 @@ const Wrapper = styled.div`
 Footer.defaultProps = {
   socials: [
     {
-      link: 'https://www.facebook.com/',
+      link: 'https://www.facebook.com/QuestSpaceHackerspace',
       name: 'Facebook',
       icon: 'facebook-f',
     },
+    // {
+    //   link: 'https://www.instagram.com/',
+    //   name: 'Instagram',
+    //   icon: 'instagram',
+    // },
     {
-      link: 'https://www.instagram.com/',
-      name: 'Instagram',
-      icon: 'instagram',
-    },
-    {
-      link: 'https://www.linkedin.com/',
+      link: 'https://www.linkedin.com/company/questspace-hackerspace/',
       name: 'LinkedIn',
       icon: 'linkedin-in',
     },
     {
-      link: 'https://twitter.com/',
+      link: 'https://twitter.com/questspacesk',
       name: 'Twitter',
       icon: 'twitter',
     },
