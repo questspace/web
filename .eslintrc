@@ -1,0 +1,23 @@
+{
+  "extends": ["react-app", "airbnb", "prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-underscore-dangle": "off",
+    "react/jsx-filename-extension": "off",
+    "arrow-body-style": "off",
+    "class-methods-use-this": "off",
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "react/prefer-stateless-function": "off",
+    "import/prefer-default-export": "off",
+    "no-plusplus": "off",
+    "react/no-typos": "off",
+    "react/jsx-closing-tag-location": "off",
+    "react/jsx-indent": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/no-did-mount-set-state": "off",
+    "react/no-did-update-set-state": "off"
+  },
+  "plugins": ["prettier"]
+}
