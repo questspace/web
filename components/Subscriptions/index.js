@@ -4,10 +4,10 @@ import SubscriptionItem from './SubscriptionItem';
 import { H2SubTitle, H2Title } from '../ReusableComponents';
 import NewsletterSubscription from './NewsletterSubscription';
 import { rem } from 'polished';
-import useTranslation from 'next-translate/useTranslation';
+import { useTranslation } from "next-export-i18n";
 
 const Subscriptions = ({ items, id }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   return (
     <Wrapper id={id}>

@@ -2,10 +2,13 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import { rem } from 'polished';
+import { useLanguageQuery } from 'next-export-i18n';
 
 const EventItem = ({ item }) => {
+  const [query] = useLanguageQuery();
+  
   return (
-    <Link href={item.link} passHref>
+    <Link href={{ pathname: item.link, query }} passHref>
       <a>
         <Wrapper>
           {item.image && (

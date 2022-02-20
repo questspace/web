@@ -3,7 +3,7 @@ import { rem } from 'polished';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { withTheme } from '@emotion/react';
 import { useState } from 'react';
-import useTranslation from 'next-translate/useTranslation';
+import { useTranslation } from "next-export-i18n";
 import { CustomForm } from './CustomForm';
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import { validateEmail } from '../../utils';
@@ -68,7 +68,7 @@ const SoonText = styled.div`
 `;
 
 function NewsletterSubscription({ item }) {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   const postUrl = `https://questspace.us20.list-manage.com/subscribe/post?u=${process.env.NEXT_PUBLIC_MAILCHIMP_U}&id=${process.env.NEXT_PUBLIC_MAILCHIMP_ID}`;
 

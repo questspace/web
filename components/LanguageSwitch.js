@@ -1,20 +1,22 @@
 import PropTypes from 'prop-types';
 import Link from 'next/link';
-import { useRouter } from 'next/dist/client/router';
+import { LanguageSwitcher, useLanguageQuery } from 'next-export-i18n';
 import { rem } from 'polished';
 import styled from '@emotion/styled';
 
 const LanguageSwitch = () => {
-  const { locale, locales } = useRouter();
+  const locales = ["sk", "en"]
+  const [query] = useLanguageQuery();
+  const currentLocale = query && query.lang || "sk"
 
   return (
     <Wrapper>
       {locales.map((l) => (
-        <Link key={l} href={`/${l}`} locale={l} passHref>
-          <Switch selected={l === locale}>
-            <Flag src={`/static/flags/${l}.svg`} alt={locale} />
+        <LanguageSwitcher key={l} lang={l}>
+          <Switch selected={l === currentLocale}>
+            <Flag src={`/static/flags/${l}.svg`} alt={currentLocale} />
           </Switch>
-        </Link>
+        </LanguageSwitcher>
       ))}
     </Wrapper>
   );

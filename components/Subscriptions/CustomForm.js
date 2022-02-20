@@ -1,11 +1,11 @@
-import useTranslation from 'next-translate/useTranslation';
+import { useTranslation } from "next-export-i18n";
 import React, { useState, useEffect } from 'react';
 import Button from '../Button';
 import Input from '../Input';
 import { validateEmail } from '../../utils';
 
 export const CustomForm = ({ status, message, onValidated }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
 

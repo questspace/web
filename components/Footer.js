@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 import { rem } from 'polished';
 import SocialItem from './SocialItem';
 import useWindowSize from '../utils/windowSize';
-import useTranslation from 'next-translate/useTranslation';
+import { useTranslation } from "next-export-i18n";
 
 const Footer = ({ socials }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   const size = useWindowSize();
 
   return (
@@ -33,7 +33,7 @@ const Footer = ({ socials }) => {
           </div>
 
           <div className="bottom-part">
-            <div className="copyright">{t('copyright')}</div>
+            <div className="copyright">{t('copyright')} <a href="https://ipfs.io/">IPFS</a>.</div>
             <div className="social-links">
               {socials.map((s, index) => (
                 <div
@@ -107,16 +107,12 @@ const Wrapper = styled.div`
   }
 
   .copyright {
-    font-size: ${rem(12)};
+    font-size: ${rem(10)};
     font-weight: bold;
     order: 2;
-    text-align: center;
-    ${(props) => props.theme.media.m`
-      font-size: ${rem(14)};
-    `};
     text-align: inherit;
     ${(props) => props.theme.media.m`
-     font-size: ${rem(21)};
+     font-size: ${rem(14)};
      order: 1;
      text-align: inherit;
     `};
@@ -148,11 +144,11 @@ Footer.defaultProps = {
       name: 'Facebook',
       icon: 'facebook-f',
     },
-    // {
-    //   link: 'https://www.instagram.com/',
-    //   name: 'Instagram',
-    //   icon: 'instagram',
-    // },
+    {
+      link: 'https://www.instagram.com/questspacekosice',
+      name: 'Instagram',
+      icon: 'instagram',
+    },
     {
       link: 'https://www.linkedin.com/company/questspace-hackerspace/',
       name: 'LinkedIn',

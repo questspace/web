@@ -2,10 +2,11 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import EventItem from './EventItem';
 import { useRouter } from 'next/dist/client/router';
+import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { rem } from 'polished';
-import React from 'react';
+import { useLanguageQuery } from 'next-export-i18n';
 
 const responsive = {
   superLargeDesktop: {
@@ -31,13 +32,14 @@ const responsive = {
 };
 
 const Events = ({ items }) => {
-  const { locale } = useRouter();
+  const [query] = useLanguageQuery();
+  const currentLocale = query && query.lang || "sk"
 
   return (
     <div style={{ width: '100%' }}>
       <Wrapper>
         <Carousel partialVisible responsive={responsive} infinite>
-          {items[locale].map((item, index) => (
+          {items[currentLocale].map((item, index) => (
             <EventItem key={`${index} - ${item.link}`} item={item} />
           ))}
         </Carousel>

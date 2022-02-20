@@ -3,11 +3,11 @@ import styled from '@emotion/styled';
 import { H2Title, TitlePerex } from '../ReusableComponents';
 import Button from '../Button';
 import { rem } from 'polished';
-import useTranslation from 'next-translate/useTranslation';
+import { useTranslation } from "next-export-i18n";
 import LinkButton from '../LinkButton';
 
 const ArticleItem = ({ item, orientation, centered, hasButton = false }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   return (
     <Wrapper orientation={orientation} centered={centered} id={item.id || ""}>

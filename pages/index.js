@@ -11,8 +11,7 @@ import {
   TitlePerex,
 } from '../components/ReusableComponents';
 import Subscriptions from '../components/Subscriptions';
-import { useRouter } from 'next/dist/client/router';
-import useTranslation from 'next-translate/useTranslation';
+import { useLanguageQuery, useTranslation } from 'next-export-i18n';
 // import Events from '../components/Events';
 
 const events = {
@@ -225,8 +224,9 @@ const subscriptions = {
 };
 
 export default function Home() {
-  const { locale } = useRouter();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
+  const [query] = useLanguageQuery();
+  const currentLocale = (query && query.lang) || 'sk';
 
   return (
     <Wrapper>
@@ -247,8 +247,8 @@ export default function Home() {
         </SubTitle>
       </Banner>
 
-      <Articles id="activities" items={articles[locale]} />
-      <Subscriptions id="community" items={subscriptions[locale]} />
+      <Articles id="activities" items={articles[currentLocale]} />
+      <Subscriptions id="community" items={subscriptions[currentLocale]} />
     </Wrapper>
   );
 }

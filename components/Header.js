@@ -6,12 +6,13 @@ import PropTypes from 'prop-types';
 import SlidingPanel from 'react-sliding-side-panel';
 import 'react-sliding-side-panel/lib/index.css';
 import LanguageSwitch from './LanguageSwitch';
+import { useLanguageQuery } from 'next-export-i18n';
 import Link from './Link';
-import { useRouter } from 'next/dist/client/router';
 
 const Header = ({ menuItems }) => {
   const [menuOpened, setMenuOpened] = useState(false);
-  const { locale } = useRouter();
+  const [query] = useLanguageQuery();
+  const currentLocale = (query && query.lang) || 'sk';
 
   return (
     <Wrapper>
@@ -32,9 +33,9 @@ const Header = ({ menuItems }) => {
           <MobileMenuWrapper>
             {
               <ul className="menu-items-mobile">
-                {menuItems[locale].map((item) => (
+                {menuItems[currentLocale].map((item) => (
                   <li key={item.key} className="menu-item-mobile">
-                    <Link href={item.linkTo}>
+                    <Link href={{ pathname: item.linkTo, query }}>
                       {item.label}
                     </Link>
                   </li>
@@ -58,11 +59,9 @@ const Header = ({ menuItems }) => {
 
       <MenuWrapper>
         <ul className="menu-items">
-          {menuItems[locale].map((item) => (
+          {menuItems[currentLocale].map((item) => (
             <li key={item.key} className="menu-item">
-              <Link href={item.linkTo}>
-                {item.label}
-              </Link>
+              <Link href={{ pathname: item.linkTo, query }}>{item.label}</Link>
             </li>
           ))}
         </ul>
