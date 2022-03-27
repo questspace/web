@@ -7,10 +7,10 @@
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "build": "next build && next export",
-    "serve": "npx serve ./out",
-    "export": "next export",
-    "deploy": "npm run build && npx ipfs-deploy out/ -p pinata -d cloudflare -O"
+    "build": "next build && next export -o build/",
+    "serve": "npx serve ./build",
+    "export": "next export -o build/",
+    "deploy": "npm run build && npx ipfs-deploy build/ -p pinata -t questspace.sk -d cloudflare -O"
   },
   "dependencies": {
     "@emotion/react": "^11.5.0",
