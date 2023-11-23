@@ -3,7 +3,7 @@ import { rem } from 'polished';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { withTheme } from '@emotion/react';
 import { useState } from 'react';
-import { useTranslation } from "next-export-i18n";
+import { useTranslation } from 'next-export-i18n';
 import { validateEmail } from '../../utils';
 import Button from '../Button';
 import Input from '../Input';
@@ -42,6 +42,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     margin-top: ${rem(24)};
     margin-bottom: ${rem(24)};
   }
@@ -54,6 +55,8 @@ const Wrapper = styled.div`
 const OpensItem = styled.div`
   display: flex;
   margin-right: ${rem(8)};
+  margin-bottom: ${rem(8)};
+  flex-direction: row;
 
   .icon-wrapper {
     width: ${rem(24)};
@@ -70,26 +73,11 @@ const OpensItem = styled.div`
 function SubscriptionItem({ item }) {
   const { t } = useTranslation();
 
-  const [email, setEmail] = useState('');
-  const [error, setError] = useState(null);
-
-  const confirmEmail = () => {
-    if (validateEmail(email)) {
-      //send data
-    } else {
-      setError(t('email_error'));
-    }
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      confirmEmail();
-    }
-  };
-
   return (
     <Wrapper>
-      <div className="header">{`${item.title} (${item.pricePerMonth}€ / ${t('month')})`}</div>
+      <div className="header">{`${item.title} (${item.pricePerMonth}€ / ${t(
+        'month',
+      )})`}</div>
       <div className="content-wrapper">
         <div className="text">{item.text}</div>
         <div className="opens">
@@ -103,29 +91,13 @@ function SubscriptionItem({ item }) {
           ))}
         </div>
         <div className="input-wrapper">
-          <Input
-            placeholder={t('enter_email')}
-            value={email}
-            onKeyDown={(e) => {
-              handleKeyDown(e);
-            }}
-            onChange={(e) => {
-              setEmail(e.target.value);
-              if (error) {
-                setError(null);
-              }
-            }}
-            errorMessage={error}
-          />
-        </div>
-        <div className="input-wrapper">
-          <Button
-            borderRadius={8}
-            height={50}
-            type="gradient"
-            fullWidth
-            onClick={() => confirmEmail()}
-          >{`${t('subscribe_to')} ${item.title}`}</Button>
+          <Button borderRadius={8} height={50} type="gradient" fullWidth>
+            <a
+              href="https://membership.ppke.sk/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >{`${t('buy_text')} ${item.title} ${t('with_crypto')}`}</a>
+          </Button>
         </div>
       </div>
     </Wrapper>

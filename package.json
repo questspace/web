@@ -1,6 +1,6 @@
 {
   "name": "questspace-web",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "private": true,
   "homepage": "./",
   "scripts": {
@@ -11,6 +11,9 @@
     "serve": "npx serve ./build",
     "export": "next export -o build/",
     "deploy": "npm run build && npx ipfs-deploy build/ -p pinata -t questspace.sk -d cloudflare -O"
+  },
+  "engines": {
+    "node": ">=14"
   },
   "dependencies": {
     "@emotion/react": "^11.5.0",

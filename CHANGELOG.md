@@ -1,3 +1,8 @@
+### 1.3.0
+
+- Update membership information
+- Move deployment to Vercel
+  
 ### 1.2.0
 
 - Deployment to IPFS through Pinata

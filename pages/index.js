@@ -12,6 +12,10 @@ import {
 } from '../components/ReusableComponents';
 import Subscriptions from '../components/Subscriptions';
 import { useLanguageQuery, useTranslation } from 'next-export-i18n';
+import Button from '../components/Button';
+import LinkButton from '../components/LinkButton';
+import { parseRelativeUrl } from 'next/dist/shared/lib/router/utils/parse-relative-url';
+import Link from 'next/link';
 // import Events from '../components/Events';
 
 const events = {
@@ -191,35 +195,34 @@ const articles = {
 
 const subscriptions = {
   sk: [
-    // {
-    //   title: 'gold community',
-    //   pricePerMonth: 10,
-    //   text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus inauctor nunc. Duis ac felis metus. Pellentesque nisi nibh, lobortis rutrum rhoncus pulvinar, tristique at nisi',
-    //   opens: ['Meetups', 'Workshops'],
-    // },
-
-    // {
-    //   title: 'Mesačné členstvo',
-    //   pricePerMonth: 50,
-    //   text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus inauctor nunc. Duis ac felis metus. Pellentesque nisi nibh, lobortis rutrum rhoncus pulvinar, tristique at nisi',
-    //   opens: ['Meetupy', 'Workshopy', 'Eventy'],
-    // },
+    {
+      title: 'Mesačné členstvo',
+      pricePerMonth: 50,
+      text: 'QuestSpace hackerspace je súčasťou Paralelnej Polis v Košiciach, takže členstvo zahŕňa prístup nie len do hackerspace, ale taktiež do coworkingu, kaviarne a stávate sa súčasťou komunity.',
+      opens: ['3D tlačiarne', 'Elektronika', 'Senzory', 'Rezačky', 'XR headsety', 'Veľký stôl pre kolaboratívne projekty', 'Pájkovačky', 'Náradie', 'Dielňa'],
+    },
+    {
+      title: 'Študentské mesačné členstvo',
+      pricePerMonth: 25,
+      text: 'Zľavnená verzia mesačného členstva v komunite QuestSpace a súčasne Paralelnej Polis v Košiciach pre študentov základných, stredných a vysokých škôl. Zahŕňa všetky výhody mesačného členstva.',
+      opens: ['3D tlačiarne', 'Elektronika', 'Senzory', 'Rezačky', 'XR headsety', 'Veľký stôl pre kolaboratívne projekty', 'Pájkovačky', 'Náradie', 'Dielňa'],
+    },
     
   ],
   en: [
-    // {
-    //   title: 'gold community',
-    //   pricePerMonth: 10,
-    //   text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus inauctor nunc. Duis ac felis metus. Pellentesque nisi nibh, lobortis rutrum rhoncus pulvinar, tristique at nisi',
-    //   opens: ['Meetups', 'Workshops'],
-    // },
+    {
+      title: 'Monthly membership',
+      pricePerMonth: 50,
+      text: 'QuestSpace hackerspace is part of Paralelná Polis in Košice, so membership includes access not only to the hackerspace, but also to the coworking space, cafe and you become part of the community.',
+      opens: ['3D printers', 'Electronics', 'Sensors', 'Cutters', 'XR headsets', 'Large table for collaborative projects', 'Soldering irons', 'Tools', 'Workshop space'],
+    },
 
-    // {
-    //   title: 'Monthly membership',
-    //   pricePerMonth: 50,
-    //   text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus inauctor nunc. Duis ac felis metus. Pellentesque nisi nibh, lobortis rutrum rhoncus pulvinar, tristique at nisi',
-    //   opens: ['Meetups', 'Workshops', 'Events'],
-    // },
+    {
+      title: 'Student monthly membership',
+      pricePerMonth: 25,
+      text: 'Discounted version of monthly membership in QuestSpace hackerspace and community of Paralelná Polis in Košice for elementary, middle and high school students. Includes all the benefits of a monthly membership.',
+      opens: ['3D printers', 'Electronics', 'Sensors', 'Cutters', 'XR headsets', 'Large table for collaborative projects', 'Soldering irons', 'Tools', 'Workshop space'],
+    },
   ],
 };
 
@@ -235,13 +238,13 @@ export default function Home() {
           <H1Title>{t('main_title')}</H1Title>
           <H1SubTitle>{t('main_subtitle')}</H1SubTitle>
           <TitlePerex>{t('title_text')}</TitlePerex>
-          {/* <Button backgroundInside="#021226" type="gradient">
-            {t('learn_more')}
-          </Button> */}
+          <Button backgroundInside="#021226" type="gradient">
+            <Link href="#subtitle">{t('learn_more')}</Link>
+          </Button>
         </MainTitle>
 
         <SubTitle>
-          <H2Title>{t('subtitle_title')}</H2Title>
+          <H2Title id="subtitle">{t('subtitle_title')}</H2Title>
           <H2SubTitle>{t('subtitle_subtitle_1')}<br />{t('subtitle_subtitle_2')}</H2SubTitle>
           <CenteredTitlePerex>{t('subtitle_text')}</CenteredTitlePerex>
         </SubTitle>
