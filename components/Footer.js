@@ -33,7 +33,7 @@ const Footer = ({ socials }) => {
           </div>
 
           <div className="bottom-part">
-            <div className="copyright">{t('copyright')} <a href="https://ipfs.io/">IPFS</a>.</div>
+            <div className="copyright">Copyright © 2021-{new Date().getFullYear()} QuestSpace.</div>
             <div className="social-links">
               {socials.map((s, index) => (
                 <div
