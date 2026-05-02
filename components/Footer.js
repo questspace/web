@@ -159,6 +159,11 @@ Footer.defaultProps = {
       name: 'Twitter',
       icon: 'twitter',
     },
+    {
+      link: 'https://github.com/questspace',
+      name: 'GitHub',
+      icon: 'github',
+    },
   ],
 };
 

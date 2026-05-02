@@ -3,6 +3,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 
 import {
   faFacebookF,
+  faGithub,
   faInstagram,
   faLinkedinIn,
   faTwitter,
@@ -10,4 +11,4 @@ import {
 
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faFacebookF, faLinkedinIn, faInstagram, faTwitter, faCheck);
+library.add(faFacebookF, faGithub, faLinkedinIn, faInstagram, faTwitter, faCheck);

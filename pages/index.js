@@ -108,11 +108,11 @@ const articles = {
       ),
     },
     {
-      title: 'Decentralized Autonomous Organization (DAO)',
+      title: 'Part of Paralelná Polis Košice',
       id: "dao",
       perex:
-        'We want our member to own part the community and participate on its governance in a decentralized way. DAOs allow us to experiment with new incentivization models where community members can use the crypto-based representation of their monthly subscription fee to vote on different matters. Your community contribution and duration of your paid membership gives you a weighted stake in the DAO governance.',
-      link: '/',
+        'QuestSpace is located right next to Paralelná Polis Košice — the coworking space is the main area, and QuestSpace is the smaller space next door. Membership in QuestSpace is tied to the membership at Paralelná Polis Košice. You can purchase your membership at clenstvo.ppke.sk. Pricing: 1 day — €10, 1 month — €80, 1 month (student) — €40, 1 month fixed-desk — €120.',
+      link: 'https://clenstvo.ppke.sk/',
       content: (orientation) => (
         <NonControlledImage
           orientation={orientation}
@@ -170,11 +170,11 @@ const articles = {
       ),
     },
     {
-      title: 'Decentralizovaná autonómna organizácia (DAO)',
+      title: 'Súčasť Paralelnej Polis Košice',
       id: "dao",
       perex:
-        'Chceme, aby náš člen vlastnil časť komunity a podieľal sa na jej riadení decentralizovaným spôsobom. DAO nám umožňujú experimentovať s novými motivačnými modelmi, v rámci ktorých môžu členovia komunity využívať kryptografické zastúpenie svojho mesačného členského na hlasovanie o rôznych záležitostiach. Váš príspevok do komunity a trvanie vášho plateného členstva vám dáva vážený podiel na správe DAO.',
-      link: '/',
+        'QuestSpace sa nachádza priamo vedľa Paralelnej Polis Košice — coworking je hlavný priestor a QuestSpace je menší priestor hneď vedľa. Členstvo v QuestSpace je prepojené s členstvom v Paralelnej Polis Košice. Členstvo si môžete zakúpiť na clenstvo.ppke.sk. Cenník: 1 deň — 10 €, 1 mesiac — 80 €, 1 mesiac (študent) — 40 €, 1 mesiac fixed-desk — 120 €.',
+      link: 'https://clenstvo.ppke.sk/',
       content: (orientation) => (
         <NonControlledImage
           orientation={orientation}
@@ -197,30 +197,40 @@ const subscriptions = {
   sk: [
     {
       title: 'Mesačné členstvo',
-      pricePerMonth: 50,
-      text: 'QuestSpace hackerspace je súčasťou Paralelnej Polis v Košiciach, takže členstvo zahŕňa prístup nie len do hackerspace, ale taktiež do coworkingu, kaviarne a stávate sa súčasťou komunity.',
+      pricePerMonth: 80,
+      text: 'Členstvo v QuestSpace je prepojené s členstvom v Paralelnej Polis Košice. Zahŕňa prístup do hackerspaceového priestoru QuestSpace aj do coworkingového priestoru Paralelnej Polis. Zakúpte si ho na clenstvo.ppke.sk.',
       opens: ['3D tlačiarne', 'Elektronika', 'Senzory', 'Rezačky', 'XR headsety', 'Veľký stôl pre kolaboratívne projekty', 'Pájkovačky', 'Náradie', 'Dielňa'],
     },
     {
       title: 'Študentské mesačné členstvo',
-      pricePerMonth: 25,
-      text: 'Zľavnená verzia mesačného členstva v komunite QuestSpace a súčasne Paralelnej Polis v Košiciach pre študentov základných, stredných a vysokých škôl. Zahŕňa všetky výhody mesačného členstva.',
+      pricePerMonth: 40,
+      text: 'Zľavnená verzia mesačného členstva pre študentov základných, stredných a vysokých škôl. Zahŕňa všetky výhody mesačného členstva. Zakúpte si ho na clenstvo.ppke.sk.',
       opens: ['3D tlačiarne', 'Elektronika', 'Senzory', 'Rezačky', 'XR headsety', 'Veľký stôl pre kolaboratívne projekty', 'Pájkovačky', 'Náradie', 'Dielňa'],
     },
-    
+    {
+      title: 'Fixed-desk členstvo',
+      pricePerMonth: 120,
+      text: 'Pevné miesto v coworkingu Paralelnej Polis Košice s plným prístupom do QuestSpace. Ideálne pre tých, ktorí potrebujú stále pracovné miesto. Zakúpte si ho na clenstvo.ppke.sk.',
+      opens: ['3D tlačiarne', 'Elektronika', 'Senzory', 'Rezačky', 'XR headsety', 'Veľký stôl pre kolaboratívne projekty', 'Pájkovačky', 'Náradie', 'Dielňa'],
+    },
   ],
   en: [
     {
       title: 'Monthly membership',
-      pricePerMonth: 50,
-      text: 'QuestSpace hackerspace is part of Paralelná Polis in Košice, so membership includes access not only to the hackerspace, but also to the coworking space, cafe and you become part of the community.',
+      pricePerMonth: 80,
+      text: 'QuestSpace membership is tied to the membership at Paralelná Polis Košice. It includes access to the QuestSpace hackerspace and the Paralelná Polis coworking space. Purchase yours at clenstvo.ppke.sk.',
       opens: ['3D printers', 'Electronics', 'Sensors', 'Cutters', 'XR headsets', 'Large table for collaborative projects', 'Soldering irons', 'Tools', 'Workshop space'],
     },
-
     {
       title: 'Student monthly membership',
-      pricePerMonth: 25,
-      text: 'Discounted version of monthly membership in QuestSpace hackerspace and community of Paralelná Polis in Košice for elementary, middle and high school students. Includes all the benefits of a monthly membership.',
+      pricePerMonth: 40,
+      text: 'Discounted membership for elementary, middle, and high school students. Includes all the benefits of a monthly membership. Purchase yours at clenstvo.ppke.sk.',
+      opens: ['3D printers', 'Electronics', 'Sensors', 'Cutters', 'XR headsets', 'Large table for collaborative projects', 'Soldering irons', 'Tools', 'Workshop space'],
+    },
+    {
+      title: 'Fixed-desk membership',
+      pricePerMonth: 120,
+      text: 'A dedicated desk in the Paralelná Polis Košice coworking space with full access to QuestSpace. Perfect for those who need a permanent workstation. Purchase yours at clenstvo.ppke.sk.',
       opens: ['3D printers', 'Electronics', 'Sensors', 'Cutters', 'XR headsets', 'Large table for collaborative projects', 'Soldering irons', 'Tools', 'Workshop space'],
     },
   ],
